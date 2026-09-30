@@ -35,6 +35,36 @@ export default function App() {
 
   logger("_1", "_2"); //Aufruf der Funktion
 
+//Arrays:
+  const array = [1, 2, 3, "vier", false, "letztes"]; //Definition eines Arrays, Elemente mit Komma separieren; alle Datentypen möglich
+  const element = array[0]; //gibt das Element an erster Stelle (Stelle 0) aus
+  const elementLast = array[array.length - 1]; //gibt das letzte Element des Arrays aus, mit -2 das zweitletzte, etc. 
+
+  const users = ["Tim", "Anna", "Admin"];
+  const usersTransformed =users.map(user => user + "_user"); //map() erstellt ein neues Array, das die Elemente des alten Arrays anpasst
+  console.log(usersTransformed);
+
+  const filteredUsers = users.filter(user => user !== "Admin") //filter() erstellt neues Array, indem es Elemente aus dem alten Array filtert
+  console.log(filteredUsers);
+  //map() und filter() verlangen Funktionen in den Klammern
+
+  //Array = Liste von Elementen / Werten
+  //Arrays = geordnet
+  //Arrays = Elemente werden über ihren Index (Position) gefunden
+
+
+  //Objekte:
+  const object ={
+    meinString: "User",
+    meineNummer: 1,
+    meinArray: [],
+    meinObjekt: {},
+  }
+
+  //Objekt = Liste von Schlüssel-Wert-Paaren (ähnlich wie Dictionary in Python)
+  //Objekte: ungeordnet
+  //Objekt: Werte werden über Schlüssel identifiziert
+
 
 //Übung 1:
 
@@ -101,9 +131,14 @@ export default function App() {
       <div>Hallo Welt {a}</div>
       <div>{user === "admin" ? "isAdmin" : "isNotAdmin"}</div>
       <div style={{ backgroundColor: user === "admin" ? "blue" : "red" }}></div>
-
       <p style={{ color: IsTheTruth ? "green" : "red" }}>Heute regnet es nicht, es scheint die Sonne</p>
       <div>{logger("_1", "_2")}</div>
+      <div>{element}</div>
+      <div>{elementLast}</div>
+      <div>{array}</div>
+      <div>{users.map((user) => (<li>{user}</li>))}</div>
+      <div>{object.meineNummer}</div>
+      <div>{object["meinString"]}</div>
     </div>
     /*
      *
