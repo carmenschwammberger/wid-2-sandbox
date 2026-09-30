@@ -5,6 +5,91 @@ export default function App() {
    *
    */
 
+  console.log("Test2");
+
+  const a = "Test";  //Schlüsselwort für Deklaration einer Variable
+  //const a = "Teste1"; -> Fehler, da a bereits definiert, Varialen können nicht mehrfach definiert werden
+
+  if(a === "Test"){ //Einrückung spielt keine Rolle
+    console.log("A ist gleich Test"); //Befehle werden immer mit ; abeschlossen
+  } //if(a === "Test") definiert eine Bedingung, {} Block -> definiert, was passiert, wenn die Bedingung eingehalten ist
+  else { //else definiert, was passiert, wenn die Bedingung nicht eingehalten ist
+    console.log("A ist nicht gleich Test");
+  }
+
+  //Bedingung ?:
+
+  const user = "admin";
+
+  user === "admin" ? "isAdmin": "isNotAdmin"; //Ternärer Operator, wenn Bedingung erfüllt, dann isAdmin, sonst isNotAdmin 
+
+
+//Funktionen:
+
+  function logger(x, y = "_3"){ //Definition der Parameter: Es braucht nicht zwingend Parameter; mit y = "_3" wird ein Default-Wert für y definiert, falls y nicht beim Ausführen der Funkiton gebraucht wird
+  //Es müssen zuerst alle Parameter ohne Default-Wert definiert werden (von links nach rechts)
+    const result = "Funktion ausgeführt!" + x + y; //Definition der Variable für Ausgabe
+    console.log("Funktion ausgeführt!" + x + y);
+    return result; //Ausgabe
+  } //Definition der Funktion
+
+  logger("_1", "_2"); //Aufruf der Funktion
+
+
+//Übung 1:
+
+  console.log("Übung 1");
+
+  const Datentyp = "Hallo Welt";
+
+  if(typeof Datentyp === "string") {
+    console.log("Datentyp ist ein String");
+  }
+  else if(typeof Datentyp === "number") { //tyeof detektiert bzw. prüft den Datentyp der Variable
+    console.log("Datentyp ist eine Zahl");
+  }
+  else if (typeof Datentyp === "boolean") {
+    console.log("Datentyp ist ein Boolean");
+  }
+  else if (typeof Datentyp === "null") {
+    console.log("Datentyp ist null");
+  }
+  else {
+    console.log("Datentyp ist nicht bekannt");
+  }
+
+
+  //Übung 2:
+
+  console.log("Übung 2");
+
+  const IsTheTruth = false;
+
+  //Übung 3:
+
+  console.log("Übung 3");
+
+  function multiply(x, y = 2) {
+    if(typeof x !== "number" || typeof y !== "number") {
+      console.log("Fehler: x und y müssen Zahlen sein");
+      return;
+    }
+    const result = x * y;
+    console.log("Produkt: " + result);
+    return result;
+  }
+
+  multiply(5, 3);
+
+
+  //Übung 4:
+
+  console.log("Übung 4");
+  
+  const Text = (Wort1, Wort2) => Wort1 + " " + Wort2;
+  Text("Hallo", "Welt");
+
+
   return (
     /*
      *
@@ -12,9 +97,14 @@ export default function App() {
      *    + JavaScript in {} möglich
      *
      */
+    <div>
+      <div>Hallo Welt {a}</div>
+      <div>{user === "admin" ? "isAdmin" : "isNotAdmin"}</div>
+      <div style={{ backgroundColor: user === "admin" ? "blue" : "red" }}></div>
 
-    <div>Hallo Welt</div>
-
+      <p style={{ color: IsTheTruth ? "green" : "red" }}>Heute regnet es nicht, es scheint die Sonne</p>
+      <div>{logger("_1", "_2")}</div>
+    </div>
     /*
      *
      */
