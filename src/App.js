@@ -112,7 +112,7 @@ export default function App() {
   multiply(5, 3);
 
 
-  //Übung 4:
+  //Übung 4.1:
 
   console.log("Übung 4");
   
@@ -145,3 +145,47 @@ export default function App() {
      */
   );
 }
+
+
+//Übung 4.2
+
+function checkZahl(zahl) {
+  if (zahl < 0) {
+    return "Zahl ist kleiner als 0";
+  } else if (zahl > 0) {
+    return "Zahl ist grösser als 0";
+  } else {
+    return "Zahl ist gleich 0";
+  }
+}
+
+
+//Übung 4.3
+
+function greaterZahl(zahl1, zahl2) {
+  if (zahl1 > zahl2) {
+    return zahl1;
+}
+  else if (zahl1 < zahl2) {
+    return zahl2;
+  }
+  else {
+    return "Beide Zahlen sind identisch";
+  }
+}
+
+
+//Übung 5
+
+const array2 = [1, 2, 3, 4, 5, 6];
+const array2Mult = array2.map(zahl => zahl * 3);
+console.log(array2Mult);
+
+
+//Übung 5.2
+
+const username = ["Anna", "Hans", "Tim", "Leonie", "Lisa"];
+const usernameFilter = username.filter(name => name.includes("a"));
+console.log(usernameFilter);
+
+
